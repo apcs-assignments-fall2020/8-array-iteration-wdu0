@@ -12,12 +12,14 @@ public class MyMain {
 
     // Finds the second largest number in an array
     public static int secondLargest(int[] arr) {
-        int max = arr[0];
-        int max2 = arr[0];
+        int max = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
         for (int item: arr) {
             if (item > max) {
                 max2 = max;
                 max = item;
+            } else if (item > max2) {
+                max2 = item;
             }
         }
         return max2;
